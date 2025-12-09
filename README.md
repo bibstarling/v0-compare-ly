@@ -1,55 +1,56 @@
-# CompareLY (2)
+# 🌟 CompareLY: Mobile-First LLM Benchmarking MVP
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+## 🎯 Project Overview & Goal
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/bibstarling-gmailcoms-projects/v0-compare-ly)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/Kfy2KiXkfb6)
+This repository contains the **Minimum Viable Product (MVP)** frontend code for **CompareLY**, a mobile application designed for **AI Engineers**.
 
-1. Project Overview & Goal
-This section quickly explains what the repository is and why it exists.
+The core goal is to transform the chaotic process of LLM selection into a structured, auditable workflow. This codebase serves as the **UI component library and style guide** for the main mobile client (React Native).
 
-CompareLY: Mobile-First LLM Benchmarking MVP
+---
 
-This repository contains the Minimum Viable Product (MVP) frontend code for CompareLY, a mobile application designed for AI Engineers. The goal is to provide a structured, auditable workflow for comparing Large Language Models (LLMs) across multiple providers against domain-specific prompts.
+## ✨ MVP Features (UI Coverage)
 
-Status: This codebase serves as the UI component library and style guide for the main mobile client (React Native). It aligns with the [[Product & UX Specification]] documentation.
+The UI components developed here support the core features defined in the Product Specification:
 
-2. Core Feature Set (MVP Scope)
-List the key features the engineer will find built or partially built within this UI framework.
+* **Provider Connection Flow:** Screens for securely connecting to API services (OpenAI, OpenRouter, Custom Provider).
+* **Custom Scenario Creation:** Forms for defining domain-specific test names and input prompts.
+* **Side-by-Side Test View:** UI for displaying parallel model responses, along with **Latency, Cost, and Token** metrics.
+* **Evaluation:** UI for **Manual Scoring** (3-star ratings) and displaying the results of the **AI Evaluator System** (automated scoring).
+* **Results Dashboard:** Final comparison screen showing the **Top Performer** and score breakdowns.
+* **Aesthetic:** Clean, professional **Dark Mode** focused aesthetic.
 
-MVP Features (UI Coverage)
-Provider Connection Flow: Screens for connecting to API services (OpenAI, OpenRouter, Custom Provider).
+---
 
-Custom Scenario Creation: Forms for defining test names and inputting domain-specific prompts.
+## 🏗️ Architectural Handoff & Technical Stack
 
-Side-by-Side Test View: UI for displaying parallel model responses, along with Latency, Cost, and Token metrics.
+This frontend codebase must be integrated into the final application adhering to the **[[Technical Handoff & Architecture]]** document.
 
-Evaluation: UI for the Manual Scoring (3-star ratings) and displaying the results of the AI Evaluator System.
+### **Technical Stack**
 
-Results Dashboard: Final comparison screen showing Top Performer and score breakdowns.
+| Component | Technology | Rationale |
+| :--- | :--- | :--- |
+| **Mobile Client** | **React Native** (Leveraging these components) | Cross-platform speed and efficiency. |
+| **Backend Service** | Python (FastAPI/Django Async) or Node.js | I/O performance for concurrent LLM API calls. |
 
-Styling: Uses a clean, Dark Mode focused aesthetic.
+### **Security Note**
 
-3. Architectural Handoff & Technical Stack
-This is crucial for the implementing engineer to know how the frontend fits into the overall architecture.
+**This UI is stateless.** All sensitive operations—API key management, secure data storage, cost calculation, and parallel execution—are handled exclusively by the Backend Service.
 
-Technical Handoff
-Architecture: This UI is the Mobile Client component of a Client-Server-External API architecture.
+---
 
-Backend Stack (API): Python (FastAPI/Django Async) or Node.js is recommended for the highly concurrent service layer.
+## ⚙️ Development Setup & Deployment
 
-Mobile Client Stack: The finalized mobile application will be built using React Native to leverage these components for cross-platform deployment.
+### **Prototyping Environment**
 
-Security Note: This repository is only the frontend. All sensitive API key management is handled exclusively by the secure Backend Service.
+This repository is automatically synchronized with the v0.app prototyping environment.
 
-4. Development Setup & Deployment
-Keep the existing v0.app information but frame it as the UI Prototyping Environment.
+* **Live Prototype:** [Insert the Vercel Deployment Link here, e.g., `https://vercel.com/.../v0-compare-ly`]
+* **V0 Editor Link:** [Insert the V0 Editor Link here, e.g., `https://v0.app/chat/Kdy2fKtyXKb6`]
 
-Local Setup (UI Prototyping)
-Clone this repository.
+### **Local Setup (UI Migration)**
 
-Install dependencies (if applicable: npm install or yarn install).
+This repository provides the target components.
 
-Deployment: Your project is currently live at: https://vercel.com/bibstarling-gmailcoms-projects/v0-compare-ly
-
-Note: For the final mobile application build, components from this repository must be migrated into the main React Native project as defined in the [[MVP Implementation Plan]].
+1.  Clone this repository.
+2.  Review the component structure and styling (Tailwind CSS).
+3.  **Action:** Components must be **migrated and integrated** into the main **React Native project** as defined in the **[[MVP Implementation Plan]]**.
