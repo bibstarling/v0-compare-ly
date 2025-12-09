@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Updated to charcoal navy + vibrant orange palette for high-end analytic feel */
+:root {
+  /* Light Mode - Clean neutral surfaces */
+  --background: #f8f9fb; /* background */
+  --foreground: #1c1f26; /* text-primary */
+
+  --card: #ffffff; /* panel */
+  --card-foreground: #1c1f26;
+  --popover: #ffffff; /* panel-elevated */
+  --popover-foreground: #1c1f26;
+
+  /* Primary - Charcoal Navy (neutral, confident) */
+  --primary: #2f3f57; /* primary-500 */
+  --primary-foreground: #ffffff;
+
+  /* Secondary - Vibrant Orange (energy color) */
+  --secondary: #e87717; /* secondary-500 */
+  --secondary-foreground: #ffffff;
+
+  /* Accent - Using orange for highlights */
+  --accent: #f68b24; /* secondary-400 */
+  --accent-foreground: #ffffff;
+
+  --muted: #e2e8f0; /* primary-100 */
+  --muted-foreground: #4a505c; /* text-secondary */
+
+  /* Semantic Colors - Harmonized with orange system */
+  --destructive: #d14f4f; /* error */
+  --destructive-foreground: #ffffff;
+
+  --success: #2fa67d; /* success */
+  --success-foreground: #ffffff;
+
+  --warning: #e6a03c; /* warning (leans orange) */
+  --warning-foreground: #ffffff;
+
+  --info: #4a6fae; /* info (soft steel-blue) */
+  --info-foreground: #ffffff;
+
+  /* Borders - Soft and subtle */
+  --border: #e1e5ec; /* border */
+  --input: #e1e5ec;
+  --ring: #f68b24; /* secondary-400 */
+
+  /* Chart Colors - Using orange + navy palette */
+  --chart-1: #e87717; /* secondary-500 (orange) */
+  --chart-2: #2f3f57; /* primary-500 (navy) */
+  --chart-3: #4a5a72; /* primary-300 */
+  --chart-4: #2fa67d; /* success */
+  --chart-5: #e6a03c; /* warning */
+
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1c1f26;
+  --sidebar-primary: #2f3f57;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff1e8;
+  --sidebar-accent-foreground: #1c1f26;
+  --sidebar-border: #e1e5ec;
+  --sidebar-ring: #f68b24;
+}
+
+/* Dark Mode - Navy-charcoal surfaces with vibrant orange accents */
+.dark {
+  /* Dark Mode - Proper dark surfaces with depth */
+  --background: #0e1116; /* background */
+  --foreground: #e9ecf2; /* text-primary */
+
+  /* Elevated surfaces for depth */
+  --card: #161b22; /* panel */
+  --card-foreground: #e9ecf2;
+  --popover: #1e242d; /* panel-elevated */
+  --popover-foreground: #e9ecf2;
+
+  /* Primary - Softer navy for dark mode */
+  --primary: #4a5a72; /* primary-accent */
+  --primary-foreground: #ffffff;
+
+  /* Secondary - Vibrant orange (dark-mode balanced) */
+  --secondary: #e87717; /* orange-accent */
+  --secondary-foreground: #ffffff;
+
+  /* Accent - Orange hover state */
+  --accent: #f68b24; /* orange-hover */
+  --accent-foreground: #ffffff;
+
+  --muted: #1e242d; /* panel-elevated */
+  --muted-foreground: #a3acba; /* text-secondary */
+
+  /* Semantic Colors - Dark mode adjusted */
+  --destructive: #d14f4f; /* error */
+  --destructive-foreground: #ffffff;
+
+  --success: #2fa67d; /* success */
+  --success-foreground: #ffffff;
+
+  --warning: #e6a03c; /* warning */
+  --warning-foreground: #ffffff;
+
+  --info: #4a6fae; /* info */
+  --info-foreground: #ffffff;
+
+  /* Borders - Subtle contrast */
+  --border: #2a3340; /* border */
+  --input: #2a3340;
+  --ring: #f68b24; /* orange-hover */
+
+  /* Chart Colors - Dark mode variants */
+  --chart-1: #e87717; /* orange-accent */
+  --chart-2: #4a5a72; /* primary-accent */
+  --chart-3: #273347; /* primary-highlight */
+  --chart-4: #2fa67d; /* success */
+  --chart-5: #e6a03c; /* warning */
+
+  /* Sidebar - Dark mode */
+  --sidebar: #161b22;
+  --sidebar-foreground: #e9ecf2;
+  --sidebar-primary: #4a5a72;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e242d;
+  --sidebar-accent-foreground: #e9ecf2;
+  --sidebar-border: #2a3340;
+  --sidebar-ring: #f68b24;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    /* Hide scrollbars globally for mobile app feel */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Adding iOS screenshot animation keyframes */
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
