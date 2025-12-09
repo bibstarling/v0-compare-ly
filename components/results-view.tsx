@@ -575,17 +575,7 @@ export function ResultsView({
       <div className="flex-1 overflow-y-auto px-4 py-4">
         {/* 1. COMPARISON SUMMARY BLOCK */}
         {modelA && (
-          <Card
-            className={cn(
-              "p-3 mb-3",
-              // Updated dark mode colors for better contrast
-              comparisonState.state === "clear-winner" &&
-                "bg-gradient-to-b from-blue-50 to-white dark:from-blue-900/40 dark:to-blue-950/20 border-blue-200 dark:border-blue-700",
-              comparisonState.state === "too-close" &&
-                "bg-gradient-to-b from-gray-50 to-white dark:from-gray-800/40 dark:to-gray-900/20 border-gray-200 dark:border-gray-600",
-              comparisonState.state === "tie" && "bg-muted/30 border-border",
-            )}
-          >
+          <Card className="p-3 mb-3">
             <div className="flex items-start gap-2.5">
               <div
                 className={cn(
@@ -855,8 +845,9 @@ export function ResultsView({
           </Card>
         )}
 
-        {aiEvaluatorEnabled && aiEvaluatorAggregated && aiEvaluatorAggregated.length > 0 && (
-          <Card className="p-3 mb-3 bg-gradient-to-b from-violet-50/50 to-white dark:from-violet-900/40 dark:to-violet-950/20 border-violet-200 dark:border-violet-700">
+        {/* 8. AI EVALUATOR SUMMARY */}
+        {aiEvaluatorAggregated && (
+          <Card className="p-3 mb-3">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-1.5">
                 <div className="h-5 w-5 rounded-full bg-violet-500 flex items-center justify-center">
