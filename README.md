@@ -44,8 +44,7 @@ This frontend codebase must be integrated into the final application adhering to
 
 This repository is automatically synchronized with the v0.app prototyping environment.
 
-* **Live Prototype:** [Insert the Vercel Deployment Link here, e.g., `https://vercel.com/.../v0-compare-ly`]
-* **V0 Editor Link:** [Insert the V0 Editor Link here, e.g., `https://v0.app/chat/Kdy2fKtyXKb6`]
+* **Live Prototype:** [https://v0.app/chat/compare-ly-mobile-first-llm-benchmarking-platform-4iCpGTfQNw4?ref=ANG80G]
 
 ### **Local Setup (UI Migration)**
 
